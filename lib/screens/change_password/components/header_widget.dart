@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget signUpHeaderWidget(BuildContext context) {
+Widget changePasswordHeaderWidget(BuildContext context) {
   return Container(
     color: Theme.of(context).colorScheme.primaryContainer,
     child: Column(
@@ -28,14 +28,14 @@ Widget signUpHeaderWidget(BuildContext context) {
         Padding(
           padding: EdgeInsets.only(left: 15.w),
           child: Text(
-            "Register",
+            "Change password",
             style: Theme.of(context).textTheme.displayLarge,
           ),
         ),
         Padding(
           padding: EdgeInsets.only(left: 15.w, top: 5.h, bottom: 10.h),
           child: Text(
-            "Create your account",
+            "Change your password",
             style: Theme.of(context).textTheme.labelSmall,
           ),
         ),

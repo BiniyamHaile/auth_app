@@ -15,12 +15,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Future<void> _handleLoginUser(
       LoginUserEvent event, Emitter<LoginState> emit) async {
     emit(LoginLoading());
-    await _loginApiService
+    try {
+      await _loginApiService
         .loginUser(
           email: event.email,
           password: event.password,
-        )
-        .onError((error, stackTrace) => emit(LoginError(error.toString())))
-        .then((value) => emit(LoginSuccess()));
+        );
+        emit(LoginSuccess());
+    } catch (e) {
+      emit(LoginError(e.toString()));
+    }
+      
   }
 }

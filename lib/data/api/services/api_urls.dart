@@ -1,7 +1,7 @@
 class ApiEndPoints {
-  static const String BASE_URL = "http://62.171.137.149:30080";
-  static const String SIGN_UP = "$BASE_URL/registration";
-  static const String LOGIN = "$BASE_URL/authentication/login";
-  static const String CHANGE_PASSWORD =
-      "$BASE_URL/authentication/change-password";
+  static const String baseURL = "http://62.171.137.149:30080";
+  static const String signUp = "$baseURL/authentication/registration";
+  static const String login = "$baseURL/authentication/authentication/login";
+  static const String changePassword =
+      "$baseURL/authentication/change-password";
 }

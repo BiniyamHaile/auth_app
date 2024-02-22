@@ -16,14 +16,17 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       SignUpUserEvent event, Emitter<SignUpState> emit) async {
     emit(SignUpLoading());
 
-    await _signUpApiService
+   try {
+      await _signUpApiService
         .signUpUser(
             email: event.email,
             password: event.password,
             firstName: event.firstName,
             lastName: event.lastName,
-            confirmPassword: event.confirmPassword)
-        .onError((error, stackTrace) => emit(SignUpError(error.toString())))
-        .then((value) => emit(SignUpSuccess()));
+            confirmPassword: event.confirmPassword);
+            emit(SignUpSuccess());
+   } catch (e) {
+     emit(SignUpError(e.toString()));
+   }
   }
 }

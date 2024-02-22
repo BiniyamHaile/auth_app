@@ -9,7 +9,7 @@ class AppColors {
 
   Color get greyText => Colors.grey;
 
-  Color get primaryContainer => Color(0xff152534);
+  Color get primaryContainer => const Color(0xff152534);
 
   Color get colorSecondaryText => const Color(0xff3b3b3b);
 
@@ -21,5 +21,7 @@ class AppColors {
 
   Color get scaffoldColor => Colors.white;
 
-  Color get outlinedButtonColor => Color.fromARGB(255, 186, 225, 98);
+  Color get outlinedButtonColor => const Color.fromARGB(255, 186, 225, 98);
+
+  Color get errorColor => const Color(0xffd32f2f);
 }

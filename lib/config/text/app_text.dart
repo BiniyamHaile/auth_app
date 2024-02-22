@@ -12,5 +12,6 @@ Text appText({
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
+        overflow: TextOverflow.ellipsis
       ));
 }

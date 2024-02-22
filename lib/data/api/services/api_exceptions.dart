@@ -11,21 +11,21 @@ class ApplicationErrorException implements Exception {
 }
 
 class DataFetchException extends ApplicationErrorException {
-  DataFetchException([String? message]) : super(message, 'Data Fetch Error: ');
+  DataFetchException([String? message]) : super(message, '');
 }
 
 class BadRequestException extends ApplicationErrorException {
-  BadRequestException([String? message]) : super(message, 'Invalid Request: ');
+  BadRequestException([String? message]) : super(message, '');
 }
 
 class UnauthorizedRequestException extends ApplicationErrorException {
   UnauthorizedRequestException([String? message])
-      : super(message, 'Unauthorized Request: ');
+      : super(message, '');
 }
 
 class ForbiddenRequestException extends ApplicationErrorException {
   ForbiddenRequestException([String? message])
-      : super(message, 'Forbidden Request: ');
+      : super(message, 'Forbidden: ');
 }
 
 class NotFoundRequestException extends ApplicationErrorException {
@@ -34,5 +34,5 @@ class NotFoundRequestException extends ApplicationErrorException {
 
 class InternalServerErrorException extends ApplicationErrorException {
   InternalServerErrorException([String? message])
-      : super(message, 'Internal Server Error: ');
+      : super(message, '');
 }

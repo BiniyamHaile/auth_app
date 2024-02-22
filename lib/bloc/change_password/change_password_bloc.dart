@@ -15,15 +15,18 @@ class ChangePasswordBloc
   Future<void> _handleChangePasswordUser(
       ChangePasswordUserEvent event, Emitter<ChangePasswordState> emit) async {
     emit(ChangePasswordLoading());
-    await _changePasswordApiService
+    try{
+      await _changePasswordApiService
         .changePassword(
           email: event.email,
           oldPassword: event.oldPassword,
           newPassword: event.newPassword,
           confirmPassword: event.confirmPassword,
-        )
-        .onError(
-            (error, stackTrace) => emit(ChangePasswordError(error.toString())))
-        .then((value) => emit(ChangePasswordSuccess()));
+        );
+        emit(ChangePasswordSuccess());
+    }catch(e){
+      emit(ChangePasswordError(e.toString()));
+    }
+        
   }
 }

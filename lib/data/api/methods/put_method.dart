@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<http.Response> postMethod(
+Future<http.Response> putMethod(
     {required String url, required Map<String, dynamic> body}) async {
-  final response = await http.post(
+  final response = await http.put(
     Uri.parse(url),
     headers: {
       'Content-Type': 'application/json',
@@ -11,5 +11,5 @@ Future<http.Response> postMethod(
     },
     body: jsonEncode(body),
   );
-  return  response;
+  return response;
 }

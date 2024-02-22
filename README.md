@@ -1,16 +1,14 @@
 # authapp
 
-A new Flutter project.
+A flutter project!
 
-## Getting Started
+Uses Bloc with clean code architecture.
 
-This project is a starting point for a Flutter application.
+If you want to analyse and see vulnerabilities in the code run `flutter analyse`.
 
-A few resources to get you started if this is your first Flutter project:
+As the endpoints are in http, the network requests may not work as expected,
+therefore I strongly recommend checking the app in debug mode.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To run the app in debug mode use  ----    `flutter run`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To run the app in release mode use --- `flutter run --release`
