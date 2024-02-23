@@ -1,4 +1,5 @@
 import 'package:authapp/config/text/app_text.dart';
+import 'package:authapp/config/text/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -21,7 +22,7 @@ Widget routerText({
           onTap: (){
            context.pushNamed(route);
           },
-          child: Text(textTwo , style: Theme.of(context).textTheme.displayMedium,)
+          child: Text(textTwo , style: displayMedium,)
         ),
       )
     ],

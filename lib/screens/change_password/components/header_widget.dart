@@ -1,3 +1,4 @@
+import 'package:authapp/config/text/styles/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,14 +30,14 @@ Widget changePasswordHeaderWidget(BuildContext context) {
           padding: EdgeInsets.only(left: 15.w),
           child: Text(
             "Change password",
-            style: Theme.of(context).textTheme.displayLarge,
+            style: displayLarge,
           ),
         ),
         Padding(
           padding: EdgeInsets.only(left: 15.w, top: 5.h, bottom: 10.h),
           child: Text(
             "Change your password",
-            style: Theme.of(context).textTheme.labelSmall,
+            style: labelSmall,
           ),
         ),
       ],

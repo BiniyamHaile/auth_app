@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 AppColors appColors = AppColors();
 ThemeData appTheme = ThemeData(
-  useMaterial3: false,
+  // useMaterial3: false,
     primarySwatch: appColors.colorPrimary,
     primaryColor: appColors.colorPrimary,
     disabledColor: appColors.colorSecondaryText,

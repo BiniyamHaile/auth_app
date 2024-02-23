@@ -1,4 +1,5 @@
 import 'package:authapp/bloc/login/login_bloc.dart';
+import 'package:authapp/config/text/styles/text_styles.dart';
 import 'package:authapp/routes/route_names.dart';
 import 'package:authapp/screens/components/button.dart';
 import 'package:authapp/screens/components/email_input.dart';
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           child: Text(
                             "Change Password",
-                            style: Theme.of(context).textTheme.displayMedium,
+                            style: displayMedium,
                           )),
                     ),
                   ),

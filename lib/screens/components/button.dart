@@ -9,6 +9,7 @@ Widget mainAppButton(
     bool loading = false}) {
   return SizedBox(
     height: 50.h,
+    width: 340.w,
     child: TextButton(
         style: Theme.of(context).outlinedButtonTheme.style,
         onPressed: onPressed,
