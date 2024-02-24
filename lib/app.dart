@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
                 
                 title: 'Auth app',
                 theme: appTheme,
+                darkTheme: appTheme,
+                themeMode: ThemeMode.light,
                 routerConfig: appRoutes,
                 debugShowCheckedModeBanner: false,
                 

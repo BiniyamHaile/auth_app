@@ -1,4 +1,5 @@
 import 'package:authapp/config/text/styles/text_styles.dart';
+import 'package:authapp/config/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -63,8 +64,17 @@ class CustomTextField extends StatelessWidget {
                   BorderSide(color: Theme.of(context).colorScheme.secondary),
             ),
             hintText: hintText,
-            hintStyle: labelSmall,
-            labelStyle: labelSmall,
+            hintStyle: TextStyle(
+        color: appColors.greyText,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.normal,
+      ),
+            labelStyle: displaymMedium,
+      //       TextStyle(
+      //   color: appColors.greyText,
+      //   fontSize: 14.sp,
+      //   fontWeight: FontWeight.normal,
+      // ),
             errorText: errorMsg,
             labelText: labelText,
           ),

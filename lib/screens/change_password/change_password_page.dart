@@ -1,7 +1,7 @@
 import 'package:authapp/bloc/change_password/change_password_bloc.dart';
 import 'package:authapp/screens/change_password/change_password_value_notifiers.dart';
-import 'package:authapp/screens/change_password/components/header_widget.dart';
 import 'package:authapp/screens/components/button.dart';
+import 'package:authapp/screens/components/header_widget.dart';
 import 'package:authapp/screens/components/password.dart';
 import 'package:authapp/screens/components/email_input.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +58,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
     return Scaffold(
         body: Column(
       children: [
-        changePasswordHeaderWidget(context),
+        const HeaderWidget(
+          headerText: "Change Password",
+          subHeaderText: "Change your password",
+         
+        ), 
         Expanded(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -112,6 +116,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                           const Duration(seconds: 2),
                                     ),
                                   );
+                                }else if(state is ChangePasswordSuccess){
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(
+                                    const SnackBar(
+                                      content: Text('Password Changed Successfully'),
+                                      duration:
+                                          Duration(seconds: 2),
+                                    ),
+                                  );
+                                 
                                 }
                               },
                               child:

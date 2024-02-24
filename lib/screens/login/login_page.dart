@@ -3,9 +3,9 @@ import 'package:authapp/config/text/styles/text_styles.dart';
 import 'package:authapp/routes/route_names.dart';
 import 'package:authapp/screens/components/button.dart';
 import 'package:authapp/screens/components/email_input.dart';
+import 'package:authapp/screens/components/header_widget.dart';
 import 'package:authapp/screens/components/password.dart';
 import 'package:authapp/screens/login/components/bottom_widget.dart';
-import 'package:authapp/screens/login/components/header_widget.dart';
 import 'package:authapp/screens/login/login_value_notifiers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Column(
         children: [
-          loginHeaderWidget(context),
+          const HeaderWidget(headerText:   "Sign in to your account" , subHeaderText:   "Sign in to your account", useBackButton: false,),
           Expanded(
               child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -75,10 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                           onTap: () {
                             context.pushNamed(RouteNames.changePassword);
                           },
-                          child: Text(
-                            "Change Password",
-                            style: displayMedium,
-                          )),
+                          child: displayMedium(text: "Change Password") ),
                     ),
                   ),
                   SizedBox(

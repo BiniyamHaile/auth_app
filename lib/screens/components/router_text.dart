@@ -22,7 +22,7 @@ Widget routerText({
           onTap: (){
            context.pushNamed(route);
           },
-          child: Text(textTwo , style: displayMedium,)
+          child:  displayMedium(text: textTwo)
         ),
       )
     ],

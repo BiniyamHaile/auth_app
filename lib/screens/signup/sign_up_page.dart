@@ -1,16 +1,17 @@
 import 'package:authapp/bloc/sign_up/sign_up_bloc.dart';
 import 'package:authapp/routes/route_names.dart';
 import 'package:authapp/screens/components/button.dart';
+import 'package:authapp/screens/components/header_widget.dart';
 import 'package:authapp/screens/components/password.dart';
 import 'package:authapp/screens/components/email_input.dart';
 import 'package:authapp/screens/components/router_text.dart';
 import 'package:authapp/screens/signup/components/first_name_input.dart';
-import 'package:authapp/screens/signup/components/header_widget.dart';
 import 'package:authapp/screens/signup/components/last_name_input.dart';
 import 'package:authapp/screens/signup/sign_up_value_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -64,7 +65,10 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
         body: Column(
       children: [
-        signUpHeaderWidget(context),
+        const HeaderWidget(
+            headerText: "Register",
+            subHeaderText:         "Create your account",
+            useBackButton: true),
         Expanded(
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -118,8 +122,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             const SnackBar(
                               content: Text('Sign up successful'),
                               duration: Duration(seconds: 2),
-                            ),
-                          );
+                            ),);
+
+                            context.goNamed(RouteNames.login);
                         }
                       }, child: BlocBuilder<SignUpBloc, SignUpState>(
                               builder: (context, state) {

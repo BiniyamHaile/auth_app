@@ -1,8 +1,10 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:authapp/data/api/methods/post.dart';
 import 'package:authapp/data/api/services/api_exceptions.dart';
 import 'package:authapp/data/api/services/api_urls.dart';
 import 'package:authapp/data/api/services/base_api_service.dart';
+import 'package:authapp/data/tokens/services.dart';
 import 'package:http/http.dart' as http;
 
 class LoginApiService extends BaseApiService {
@@ -39,10 +41,10 @@ dynamic validateLogin(http.Response response)async {
     
     switch (response.statusCode) {
       case 200:
-        // storing access token in flutter secure storage.
-        // TokenServices tokenServices = TokenServices();
-        // var data = json.decode(response.body);
-        // await tokenServices.storeAccessToken(data['access_token']);
+
+        TokenServices tokenServices = TokenServices();
+        var data = json.decode(response.body);
+        await tokenServices.storeAccessToken(data['access_token']);
         return true;
       
       case 400:
